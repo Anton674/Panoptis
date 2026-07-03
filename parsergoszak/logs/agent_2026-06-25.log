@@ -1,0 +1,160 @@
+2026-06-25 12:36:58.637 | INFO     | storage.db:init_db:64 - БД инициализирована: D:\claudeparser\tender_agent\storage\tenders.db
+2026-06-25 12:37:14.824 | INFO     | scraper.browser:build_driver:68 - Браузер запущен
+2026-06-25 12:37:14.825 | INFO     | __main__:phase_search:46 - ============================================================
+2026-06-25 12:37:14.827 | INFO     | __main__:phase_search:47 - ФАЗА 1 — Поиск тендеров
+2026-06-25 12:37:14.828 | INFO     | __main__:phase_search:48 - ============================================================
+2026-06-25 12:37:14.830 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «разработка программного обеспечения»
+2026-06-25 12:37:21.047 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-06-25 12:37:21.047 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «разработка программного обеспечения»: 50 тендеров
+2026-06-25 12:37:32.463 | INFO     | __main__:phase_search:71 - ✅ «разработка программного обеспечения»: 50 найдено, 50 новых
+2026-06-25 12:37:36.250 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «информационная система»
+2026-06-25 12:37:42.258 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-06-25 12:37:42.258 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «информационная система»: 50 тендеров
+2026-06-25 12:38:01.465 | INFO     | __main__:phase_search:71 - ✅ «информационная система»: 50 найдено, 48 новых
+2026-06-25 12:38:07.443 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «техническое обслуживание»
+2026-06-25 12:38:11.906 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-06-25 12:38:11.909 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «техническое обслуживание»: 50 тендеров
+2026-06-25 12:38:30.120 | INFO     | __main__:phase_search:71 - ✅ «техническое обслуживание»: 50 найдено, 50 новых
+2026-06-25 12:38:34.625 | INFO     | __main__:phase_download:80 - ============================================================
+2026-06-25 12:38:34.627 | INFO     | __main__:phase_download:81 - ФАЗА 2 — Скачивание документов
+2026-06-25 12:38:34.627 | INFO     | __main__:phase_download:82 - ============================================================
+2026-06-25 12:38:34.631 | INFO     | __main__:phase_download:85 - В очереди на скачивание: 20 тендеров
+2026-06-25 12:38:34.631 | INFO     | __main__:phase_download:88 - [1/20] № 2400700098526000001
+2026-06-25 12:38:34.648 | INFO     | scraper.downloader:download_tender_docs:98 - 📄 Открываем тендер __2400700098526000001
+2026-06-25 12:38:40.723 | INFO     | scraper.downloader:download_tender_docs:123 -   Найдено ссылок: 1
+2026-06-25 12:38:40.736 | INFO     | scraper.downloader:download_tender_docs:128 -   ⬇️  zakupki-traffic.xlsx (прочее)
+2026-06-25 12:38:44.906 | INFO     | scraper.downloader:download_tender_docs:150 -   ✅ Сохранён: D:\claudeparser\tender_agent\docs\__2400700098526000001\zakupki-traffic.xlsx (1032 КБ)
+2026-06-25 12:38:51.414 | INFO     | __main__:phase_download:88 - [2/20] № 0173100005126000018
+2026-06-25 12:38:51.414 | INFO     | scraper.downloader:download_tender_docs:98 - 📄 Открываем тендер __0173100005126000018
+2026-06-25 12:38:59.014 | INFO     | scraper.downloader:download_tender_docs:123 -   Найдено ссылок: 1
+2026-06-25 12:38:59.014 | INFO     | scraper.downloader:download_tender_docs:128 -   ⬇️  zakupki-traffic.xlsx (прочее)
+2026-06-25 12:39:31.305 | WARNING  | scraper.downloader:download_tender_docs:152 -   ⚠️  Не удалось скачать: zakupki-traffic.xlsx
+2026-06-25 12:39:36.996 | INFO     | __main__:phase_download:88 - [3/20] № 0173100012626000048
+2026-06-25 12:39:36.996 | INFO     | scraper.downloader:download_tender_docs:98 - 📄 Открываем тендер __0173100012626000048
+2026-06-25 12:39:43.547 | INFO     | scraper.downloader:download_tender_docs:123 -   Найдено ссылок: 1
+2026-06-25 12:39:43.553 | INFO     | scraper.downloader:download_tender_docs:128 -   ⬇️  zakupki-traffic.xlsx (прочее)
+2026-06-25 12:40:15.868 | WARNING  | scraper.downloader:download_tender_docs:152 -   ⚠️  Не удалось скачать: zakupki-traffic.xlsx
+2026-06-25 12:40:21.583 | INFO     | __main__:phase_download:88 - [4/20] № 0173100010826000027
+2026-06-25 12:40:21.585 | INFO     | scraper.downloader:download_tender_docs:98 - 📄 Открываем тендер __0173100010826000027
+2026-06-25 12:40:27.749 | INFO     | scraper.downloader:download_tender_docs:123 -   Найдено ссылок: 1
+2026-06-25 12:40:27.749 | INFO     | scraper.downloader:download_tender_docs:128 -   ⬇️  zakupki-traffic.xlsx (прочее)
+2026-06-25 12:41:00.147 | WARNING  | scraper.downloader:download_tender_docs:152 -   ⚠️  Не удалось скачать: zakupki-traffic.xlsx
+2026-06-25 12:41:04.490 | INFO     | __main__:phase_download:88 - [5/20] № 0173100005026000018
+2026-06-25 12:41:04.490 | INFO     | scraper.downloader:download_tender_docs:98 - 📄 Открываем тендер __0173100005026000018
+2026-06-25 12:41:12.402 | INFO     | scraper.downloader:download_tender_docs:123 -   Найдено ссылок: 1
+2026-06-25 12:41:12.418 | INFO     | scraper.downloader:download_tender_docs:128 -   ⬇️  zakupki-traffic.xlsx (прочее)
+2026-06-25 12:41:44.620 | WARNING  | scraper.downloader:download_tender_docs:152 -   ⚠️  Не удалось скачать: zakupki-traffic.xlsx
+2026-06-25 12:41:48.330 | INFO     | __main__:phase_download:88 - [6/20] № 0372200139826000006
+2026-06-25 12:41:48.330 | INFO     | scraper.downloader:download_tender_docs:98 - 📄 Открываем тендер __0372200139826000006
+2026-06-25 12:41:55.711 | INFO     | scraper.downloader:download_tender_docs:123 -   Найдено ссылок: 1
+2026-06-25 12:41:55.713 | INFO     | scraper.downloader:download_tender_docs:128 -   ⬇️  zakupki-traffic.xlsx (прочее)
+2026-06-25 12:42:28.050 | WARNING  | scraper.downloader:download_tender_docs:152 -   ⚠️  Не удалось скачать: zakupki-traffic.xlsx
+2026-06-25 12:42:32.849 | INFO     | __main__:phase_download:88 - [7/20] № 32616053985
+2026-06-25 12:42:32.852 | INFO     | scraper.downloader:download_tender_docs:98 - 📄 Открываем тендер __32616053985
+2026-06-25 12:42:39.454 | INFO     | scraper.downloader:download_tender_docs:123 -   Найдено ссылок: 1
+2026-06-25 12:42:39.454 | INFO     | scraper.downloader:download_tender_docs:128 -   ⬇️  zakupki-traffic.xlsx (прочее)
+2026-06-25 12:43:11.738 | WARNING  | scraper.downloader:download_tender_docs:152 -   ⚠️  Не удалось скачать: zakupki-traffic.xlsx
+2026-06-25 12:43:17.549 | INFO     | __main__:phase_download:88 - [8/20] № 0173100005126000015
+2026-06-25 12:43:17.551 | INFO     | scraper.downloader:download_tender_docs:98 - 📄 Открываем тендер __0173100005126000015
+2026-06-25 12:43:24.670 | INFO     | scraper.downloader:download_tender_docs:123 -   Найдено ссылок: 1
+2026-06-25 12:43:24.674 | INFO     | scraper.downloader:download_tender_docs:128 -   ⬇️  zakupki-traffic.xlsx (прочее)
+2026-06-25 12:43:56.971 | WARNING  | scraper.downloader:download_tender_docs:152 -   ⚠️  Не удалось скачать: zakupki-traffic.xlsx
+2026-06-25 12:44:02.610 | INFO     | __main__:phase_download:88 - [9/20] № 0373100062626000025
+2026-06-25 12:44:02.615 | INFO     | scraper.downloader:download_tender_docs:98 - 📄 Открываем тендер __0373100062626000025
+2026-06-25 12:44:10.573 | INFO     | scraper.downloader:download_tender_docs:123 -   Найдено ссылок: 1
+2026-06-25 12:44:10.573 | INFO     | scraper.downloader:download_tender_docs:128 -   ⬇️  zakupki-traffic.xlsx (прочее)
+2026-06-25 12:44:42.836 | WARNING  | scraper.downloader:download_tender_docs:152 -   ⚠️  Не удалось скачать: zakupki-traffic.xlsx
+2026-06-25 12:44:46.262 | INFO     | __main__:phase_download:88 - [10/20] № 0172200006926000020
+2026-06-25 12:44:46.262 | INFO     | scraper.downloader:download_tender_docs:98 - 📄 Открываем тендер __0172200006926000020
+2026-06-25 12:44:51.755 | INFO     | scraper.downloader:download_tender_docs:123 -   Найдено ссылок: 1
+2026-06-25 12:44:51.756 | INFO     | scraper.downloader:download_tender_docs:128 -   ⬇️  zakupki-traffic.xlsx (прочее)
+2026-06-25 12:45:24.073 | WARNING  | scraper.downloader:download_tender_docs:152 -   ⚠️  Не удалось скачать: zakupki-traffic.xlsx
+2026-06-25 12:45:27.164 | INFO     | __main__:phase_download:88 - [11/20] № 0173100005126000014
+2026-06-25 12:45:27.167 | INFO     | scraper.downloader:download_tender_docs:98 - 📄 Открываем тендер __0173100005126000014
+2026-06-25 12:45:33.912 | INFO     | scraper.downloader:download_tender_docs:123 -   Найдено ссылок: 1
+2026-06-25 12:45:33.912 | INFO     | scraper.downloader:download_tender_docs:128 -   ⬇️  zakupki-traffic.xlsx (прочее)
+2026-06-25 12:46:03.191 | INFO     | __main__:main:126 - Остановлено пользователем
+2026-06-25 12:46:19.699 | INFO     | __main__:main:131 - Браузер закрыт. Работа завершена.
+2026-06-25 13:46:28.434 | INFO     | storage.db:init_db:64 - БД инициализирована: D:\claudeparser\tender_agent\storage\tenders.db
+2026-06-25 13:46:38.110 | INFO     | scraper.browser:build_driver:68 - Браузер запущен
+2026-06-25 13:46:38.111 | INFO     | __main__:phase_search:46 - ============================================================
+2026-06-25 13:46:38.113 | INFO     | __main__:phase_search:47 - ФАЗА 1 — Поиск тендеров
+2026-06-25 13:46:38.115 | INFO     | __main__:phase_search:48 - ============================================================
+2026-06-25 13:46:38.116 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «разработка программного обеспечения»
+2026-06-25 13:46:44.462 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-06-25 13:46:44.464 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «разработка программного обеспечения»: 50 тендеров
+2026-06-25 13:46:52.473 | INFO     | __main__:phase_search:71 - ✅ «разработка программного обеспечения»: 50 найдено, 0 новых
+2026-06-25 13:46:58.328 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «информационная система»
+2026-06-25 13:47:03.370 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-06-25 13:47:03.370 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «информационная система»: 50 тендеров
+2026-06-25 13:47:11.800 | INFO     | __main__:phase_search:71 - ✅ «информационная система»: 50 найдено, 12 новых
+2026-06-25 13:47:15.001 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «техническое обслуживание»
+2026-06-25 13:47:20.354 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-06-25 13:47:20.357 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «техническое обслуживание»: 50 тендеров
+2026-06-25 13:47:27.770 | INFO     | __main__:phase_search:71 - ✅ «техническое обслуживание»: 50 найдено, 22 новых
+2026-06-25 13:47:31.155 | INFO     | __main__:phase_download:80 - ============================================================
+2026-06-25 13:47:31.155 | INFO     | __main__:phase_download:81 - ФАЗА 2 — Скачивание документов
+2026-06-25 13:47:31.155 | INFO     | __main__:phase_download:82 - ============================================================
+2026-06-25 13:47:31.385 | INFO     | __main__:phase_download:85 - В очереди на скачивание: 20 тендеров
+2026-06-25 13:47:31.385 | INFO     | __main__:phase_download:88 - [1/20] № 0862100004226000069
+2026-06-25 13:47:31.404 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0862100004226000069
+2026-06-25 13:47:56.275 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0862100004226000069
+2026-06-25 13:47:59.175 | INFO     | __main__:phase_download:88 - [2/20] № 0173100005126000018
+2026-06-25 13:47:59.177 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0173100005126000018
+2026-06-25 13:48:23.829 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0173100005126000018
+2026-06-25 13:48:27.707 | INFO     | __main__:phase_download:88 - [3/20] № 0173100012626000048
+2026-06-25 13:48:27.707 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0173100012626000048
+2026-06-25 13:48:52.317 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0173100012626000048
+2026-06-25 13:48:55.645 | INFO     | __main__:phase_download:88 - [4/20] № 0173100010826000027
+2026-06-25 13:48:55.645 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0173100010826000027
+2026-06-25 13:49:19.277 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0173100010826000027
+2026-06-25 13:49:22.476 | INFO     | __main__:phase_download:88 - [5/20] № 0173100005026000018
+2026-06-25 13:49:22.476 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0173100005026000018
+2026-06-25 13:49:46.559 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0173100005026000018
+2026-06-25 13:49:49.668 | INFO     | __main__:phase_download:88 - [6/20] № 0372200139826000006
+2026-06-25 13:49:49.668 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0372200139826000006
+2026-06-25 13:50:15.089 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0372200139826000006
+2026-06-25 13:50:18.126 | INFO     | __main__:phase_download:88 - [7/20] № 32616053985
+2026-06-25 13:50:18.126 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __32616053985
+2026-06-25 13:50:43.115 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __32616053985
+2026-06-25 13:50:46.505 | INFO     | __main__:phase_download:88 - [8/20] № 0173100005126000015
+2026-06-25 13:50:46.505 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0173100005126000015
+2026-06-25 13:51:11.218 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0173100005126000015
+2026-06-25 13:51:14.714 | INFO     | __main__:phase_download:88 - [9/20] № 0373100062626000025
+2026-06-25 13:51:14.716 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0373100062626000025
+2026-06-25 13:51:39.747 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0373100062626000025
+2026-06-25 13:51:43.653 | INFO     | __main__:phase_download:88 - [10/20] № 0172200006926000020
+2026-06-25 13:51:43.653 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0172200006926000020
+2026-06-25 13:52:07.887 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0172200006926000020
+2026-06-25 13:52:09.964 | INFO     | __main__:phase_download:88 - [11/20] № 0173100005126000014
+2026-06-25 13:52:09.965 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0173100005126000014
+2026-06-25 13:52:34.364 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0173100005126000014
+2026-06-25 13:52:38.317 | INFO     | __main__:phase_download:88 - [12/20] № 0873400004326000008
+2026-06-25 13:52:38.317 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0873400004326000008
+2026-06-25 13:53:03.044 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0873400004326000008
+2026-06-25 13:53:06.784 | INFO     | __main__:phase_download:88 - [13/20] № 0815500000526008998
+2026-06-25 13:53:06.784 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0815500000526008998
+2026-06-25 13:53:31.560 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0815500000526008998
+2026-06-25 13:53:35.523 | INFO     | __main__:phase_download:88 - [14/20] № 0811300008326000397
+2026-06-25 13:53:35.523 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0811300008326000397
+2026-06-25 13:53:59.768 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0811300008326000397
+2026-06-25 13:54:02.183 | INFO     | __main__:phase_download:88 - [15/20] № 0187300014726001311
+2026-06-25 13:54:02.186 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0187300014726001311
+2026-06-25 13:54:25.974 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0187300014726001311
+2026-06-25 13:54:28.572 | INFO     | __main__:phase_download:88 - [16/20] № 0128200000126003888
+2026-06-25 13:54:28.573 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __0128200000126003888
+2026-06-25 13:54:54.181 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __0128200000126003888
+2026-06-25 13:54:56.767 | INFO     | __main__:phase_download:88 - [17/20] № 32616148602
+2026-06-25 13:54:56.767 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __32616148602
+2026-06-25 13:55:21.443 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __32616148602
+2026-06-25 13:55:24.683 | INFO     | __main__:phase_download:88 - [18/20] № 32616148943
+2026-06-25 13:55:24.683 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __32616148943
+2026-06-25 13:55:49.879 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __32616148943
+2026-06-25 13:55:53.056 | INFO     | __main__:phase_download:88 - [19/20] № 32616149010
+2026-06-25 13:55:53.058 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __32616149010
+2026-06-25 13:56:17.670 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __32616149010
+2026-06-25 13:56:20.618 | INFO     | __main__:phase_download:88 - [20/20] № 32616149041
+2026-06-25 13:56:20.618 | INFO     | scraper.downloader:download_tender_docs:194 - 📄 Открываем документы тендера __32616149041
+2026-06-25 13:56:44.615 | INFO     | scraper.downloader:download_tender_docs:208 -   Документов не найдено для __32616149041
+2026-06-25 13:56:47.964 | INFO     | __main__:phase_download:94 - Фаза 2 завершена
+2026-06-25 13:56:50.560 | INFO     | __main__:main:131 - Браузер закрыт. Работа завершена.

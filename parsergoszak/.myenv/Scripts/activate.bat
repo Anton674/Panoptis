@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=D:\claudeparser\tender_agent\.myenv
+set VIRTUAL_ENV=C:\Panoptis\parsergoszak\.myenv
 
 if not defined PROMPT set PROMPT=$P$G
 

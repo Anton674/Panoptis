@@ -1,5 +1,6 @@
 # ============================================================
-#  scraper/browser.py — Selenium-браузер с антибот-настройками
+#  scraper/browser.py — Selenium с умными ретраями
+#  вместо жёстких таймаутов — повторные попытки при обрыве
 # ============================================================
 
 import time
@@ -19,12 +20,6 @@ import config
 
 
 def build_driver(download_dir: Path = config.DOCS_DIR) -> webdriver.Chrome:
-    """
-    Создаёт Chrome WebDriver с настройками:
-    - скачивание в нужную папку без диалога
-    - рандомный user-agent
-    - базовые антидетект-параметры
-    """
     options = Options()
 
     if config.HEADLESS:
@@ -34,6 +29,9 @@ def build_driver(download_dir: Path = config.DOCS_DIR) -> webdriver.Chrome:
     options.add_argument("--disable-gpu")
     options.add_argument("--window-size=1920,1080")
     options.add_argument("--disable-blink-features=AutomationControlled")
+    options.add_argument("--disable-plugins-discovery")
+    options.add_argument("--disable-pdf-viewer")
+    options.add_argument("--dns-prefetch-disable")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option("useAutomationExtension", False)
 
@@ -48,8 +46,12 @@ def build_driver(download_dir: Path = config.DOCS_DIR) -> webdriver.Chrome:
         "download.default_directory":        str(download_dir.resolve()),
         "download.prompt_for_download":      False,
         "download.directory_upgrade":        True,
-        "plugins.always_open_pdf_externally": True,
         "safebrowsing.enabled":              True,
+        "plugins.always_open_pdf_externally":           True,
+        "download.extensions_to_open":                  "",
+        "profile.default_content_settings.popups":      0,
+        "profile.default_content_setting_values.automatic_downloads": 1,
+        "plugins.plugins_disabled": ["Chrome PDF Viewer", "Chrome PDF Plugin"],
     }
     options.add_experimental_option("prefs", prefs)
 
@@ -71,21 +73,121 @@ def build_driver(download_dir: Path = config.DOCS_DIR) -> webdriver.Chrome:
 
 def random_delay(min_s: float = config.MIN_DELAY,
                  max_s: float = config.MAX_DELAY) -> None:
-    t = random.uniform(min_s, max_s)
-    time.sleep(t)
+    time.sleep(random.uniform(min_s, max_s))
 
 
-def safe_get(driver: webdriver.Chrome, url: str, retries: int = 3) -> bool:
+def wait_for_connection(driver: webdriver.Chrome,
+                        max_wait: int = 120) -> bool:
+    """
+    Ждёт восстановления интернета.
+    Проверяет каждые 5 секунд, максимум max_wait секунд.
+    """
+    deadline = time.time() + max_wait
+    attempt  = 0
+    while time.time() < deadline:
+        attempt += 1
+        try:
+            result = driver.execute_script(
+                "var xhr = new XMLHttpRequest();"
+                "xhr.open('HEAD', 'https://zakupki.gov.ru/favicon.ico', false);"
+                "try { xhr.send(); return xhr.status > 0; }"
+                "catch(e) { return false; }"
+            )
+            if result:
+                logger.info(f"  ✅ Соединение восстановлено (попытка {attempt})")
+                return True
+        except Exception:
+            pass
+        remaining = int(deadline - time.time())
+        logger.warning(
+            f"  📡 Нет соединения, жду 5 сек... "
+            f"(попытка {attempt}, осталось {remaining} сек)"
+        )
+        time.sleep(5)
+    return False
+
+
+def _page_is_loaded(driver: webdriver.Chrome) -> bool:
+    """Страница не пустая и полностью загружена."""
+    try:
+        state = driver.execute_script("return document.readyState")
+        body  = driver.execute_script(
+            "return document.body ? document.body.innerText.length : 0"
+        )
+        return state == "complete" and body > 100
+    except Exception:
+        return False
+
+
+def _short_error(msg: str) -> str:
+    lines = [l.strip() for l in msg.strip().splitlines() if l.strip()]
+    return lines[0][:120] if lines else msg[:120]
+
+
+def safe_get(driver: webdriver.Chrome, url: str,
+             retries: int = 5) -> bool:
+    """
+    Открывает URL с умными ретраями.
+    При сетевых ошибках ждёт восстановления соединения.
+    При таймауте останавливает загрузку и пробует снова.
+    """
     for attempt in range(1, retries + 1):
         try:
             driver.get(url)
-            random_delay(1.0, 2.5)
-            return True
+
+            if _page_is_loaded(driver):
+                if attempt > 1:
+                    logger.info(f"  ✅ Загружено со {attempt}-й попытки")
+                return True
+            else:
+                logger.warning(
+                    f"  ⚠️  Страница пустая или не загрузилась "
+                    f"(попытка {attempt}/{retries})"
+                )
+
         except TimeoutException:
-            logger.warning(f"Таймаут загрузки (попытка {attempt}/{retries}): {url}")
+            logger.warning(
+                f"  ⏱️  Таймаут загрузки (попытка {attempt}/{retries}) — "
+                f"останавливаю и пробую снова"
+            )
+            try:
+                driver.execute_script("window.stop();")
+                if _page_is_loaded(driver):
+                    logger.info("  ✅ Страница частично загрузилась — продолжаем")
+                    return True
+            except Exception:
+                pass
+
         except WebDriverException as e:
-            logger.error(f"WebDriver ошибка (попытка {attempt}/{retries}): {e}")
-        time.sleep(attempt * 3)
+            err_str = str(e).lower()
+            is_network = any(k in err_str for k in [
+                "net::", "connection", "network", "ssl",
+                "certificate", "err_name_not_resolved",
+                "err_internet_disconnected", "err_connection_refused"
+            ])
+
+            if is_network:
+                logger.warning(
+                    f"  📡 Сетевая ошибка (попытка {attempt}/{retries}): "
+                    f"{_short_error(str(e))}"
+                )
+                logger.info("  ⏳ Жду восстановления интернета (макс. 2 мин)...")
+                if not wait_for_connection(driver, max_wait=120):
+                    logger.error("  ❌ Интернет не появился за 2 минуты, пропускаю")
+                    return False
+                continue
+            else:
+                logger.error(
+                    f"  ❌ Ошибка браузера (попытка {attempt}/{retries}): "
+                    f"{_short_error(str(e))}"
+                )
+
+        wait = min(5 * attempt, 30)
+        if attempt < retries:
+            logger.info(f"  🔄 Повтор через {wait} сек...")
+            time.sleep(wait)
+
+    logger.error(f"  ❌ Не удалось загрузить после {retries} попыток: {url}")
     return False
 
 

@@ -1,0 +1,25 @@
+# grammar.gbnf — ограничивает вывод Aura 7B схемой:
+# {"found": true|false, "items": [{"name": "...", "quantity": число|null, "unit": "..."|null}]}
+#
+# Проверь эту грамматику отдельно перед интеграцией: отправь тестовый
+# запрос на /completion с этим grammar и коротким промптом, посмотри,
+# что модель действительно возвращает валидный JSON. GBNF-синтаксис
+# у llama.cpp местами капризный к пробелам — если сервер ругается на
+# грамматику при старте, сверься с примерами в llama.cpp/grammars/*.gbnf.
+
+root    ::= "{" ws "\"found\":" ws boolean "," ws "\"items\":" ws items ws "}"
+
+items   ::= "[" ws "]" | "[" ws item ("," ws item)* ws "]"
+
+item    ::= "{" ws "\"name\":" ws string "," ws "\"quantity\":" ws quantity "," ws "\"unit\":" ws unit ws "}"
+
+quantity ::= number | "null"
+unit     ::= string | "null"
+boolean  ::= "true" | "false"
+
+number  ::= "-"? [0-9]+ ("." [0-9]+)?
+
+string  ::= "\"" char* "\""
+char    ::= [^"\\] | "\\" ["\\/bfnrt] | "\\u" [0-9a-fA-F] [0-9a-fA-F] [0-9a-fA-F] [0-9a-fA-F]
+
+ws      ::= [ \t\n]*

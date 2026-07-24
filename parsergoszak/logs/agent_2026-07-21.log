@@ -1,0 +1,347 @@
+2026-07-21 00:12:31.535 | INFO     | storage.db:init_db:64 - БД инициализирована: C:\Panoptis\parsergoszak\storage\tenders.db
+2026-07-21 00:15:26.285 | INFO     | storage.db:init_db:64 - БД инициализирована: C:\Panoptis\parsergoszak\storage\tenders.db
+2026-07-21 00:16:01.813 | INFO     | scraper.browser:build_driver:68 - Браузер запущен
+2026-07-21 00:16:01.814 | INFO     | __main__:phase_search:46 - ============================================================
+2026-07-21 00:16:01.814 | INFO     | __main__:phase_search:47 - ФАЗА 1 — Поиск тендеров
+2026-07-21 00:16:01.815 | INFO     | __main__:phase_search:48 - ============================================================
+2026-07-21 00:16:01.816 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «поставка офисной бумаги»
+2026-07-21 00:16:18.432 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-07-21 00:16:18.432 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «поставка офисной бумаги»: 50 тендеров
+2026-07-21 00:16:20.805 | INFO     | __main__:phase_search:71 - ✅ «поставка офисной бумаги»: 50 найдено, 50 новых
+2026-07-21 00:16:23.830 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «поставка бумаги для принтера»
+2026-07-21 00:16:32.024 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-07-21 00:16:32.029 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «поставка бумаги для принтера»: 50 тендеров
+2026-07-21 00:16:33.762 | INFO     | __main__:phase_search:71 - ✅ «поставка бумаги для принтера»: 50 найдено, 50 новых
+2026-07-21 00:16:39.513 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «поставка бумаги а4»
+2026-07-21 00:16:57.717 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-07-21 00:16:57.718 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «поставка бумаги а4»: 50 тендеров
+2026-07-21 00:16:59.739 | INFO     | __main__:phase_search:71 - ✅ «поставка бумаги а4»: 50 найдено, 48 новых
+2026-07-21 00:17:05.040 | INFO     | __main__:phase_download:80 - ============================================================
+2026-07-21 00:17:05.041 | INFO     | __main__:phase_download:81 - ФАЗА 2 — Скачивание документов
+2026-07-21 00:17:05.042 | INFO     | __main__:phase_download:82 - ============================================================
+2026-07-21 00:17:05.070 | INFO     | __main__:phase_download:85 - В очереди на скачивание: 3 тендеров
+2026-07-21 00:17:05.070 | INFO     | __main__:phase_download:88 - [1/3] № 0123300004626000069
+2026-07-21 00:17:05.073 | INFO     | scraper.downloader:download_tender_docs:235 - 📄 Тендер 0123300004626000069 → https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:17:14.830 | INFO     | scraper.downloader:download_tender_docs:262 -   Найдено документов: 6
+2026-07-21 00:17:14.830 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [1/6] [Microsoft Word Document] Приложение № 1 обоснование НМЦК.doc
+2026-07-21 00:17:14.831 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 4
+2026-07-21 00:17:14.838 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:17:15.334 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F1739FFE87873A366E374006FEE56
+2026-07-21 00:17:17.634 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:17:18.635 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:19.636 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:20.637 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:21.638 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:22.639 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:23.640 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:24.641 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:25.642 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:26.645 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:27.647 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:28.648 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:29.649 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:30.650 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:31.652 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:32.653 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:33.654 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:34.655 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:35.657 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 55054.crdownload']
+2026-07-21 00:17:36.658 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Приложение № 1 обоснование НМЦК.doc (198 КБ)
+2026-07-21 00:17:36.658 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Приложение № 1 обоснование НМЦК.doc (198 КБ)
+2026-07-21 00:17:36.670 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [2/6] [Microsoft Word Document] Приложение № 2 Проект контракта.docx
+2026-07-21 00:17:36.670 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 4
+2026-07-21 00:17:36.681 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:17:37.020 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F173A0068736BB83449178EEA96AD
+2026-07-21 00:17:39.311 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:18:09.338 | DEBUG    | scraper.downloader:_click_and_download:181 -     Новых файлов в docs/: 0 → []
+2026-07-21 00:18:09.338 | DEBUG    | scraper.downloader:_click_and_download:183 -     Файлов в папке тендера: 1 → ['Приложение № 1 обоснование НМЦК.doc']
+2026-07-21 00:18:09.338 | WARNING  | scraper.downloader:download_tender_docs:272 -   ⚠️  Не скачался: Приложение № 2 Проект контракта.docx
+2026-07-21 00:18:09.344 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [3/6] [Microsoft Word Document] Приложение № 3 Описание объекта закупки.doc
+2026-07-21 00:18:09.344 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 4
+2026-07-21 00:18:09.351 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:18:09.677 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F173A00447A4D91F764141D7C0162
+2026-07-21 00:18:12.131 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:18:42.160 | DEBUG    | scraper.downloader:_click_and_download:181 -     Новых файлов в docs/: 0 → []
+2026-07-21 00:18:42.160 | DEBUG    | scraper.downloader:_click_and_download:183 -     Файлов в папке тендера: 1 → ['Приложение № 1 обоснование НМЦК.doc']
+2026-07-21 00:18:42.160 | WARNING  | scraper.downloader:download_tender_docs:272 -   ⚠️  Не скачался: Приложение № 3 Описание объекта закупки.doc
+2026-07-21 00:18:42.165 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [4/6] [Microsoft Word Document] Приложение № 4 Требования к содержанию составу заявки (3).docx
+2026-07-21 00:18:42.174 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 4
+2026-07-21 00:18:42.182 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:18:42.511 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F173A0023792399F888A23E505915
+2026-07-21 00:18:44.977 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:19:15.009 | DEBUG    | scraper.downloader:_click_and_download:181 -     Новых файлов в docs/: 0 → []
+2026-07-21 00:19:15.010 | DEBUG    | scraper.downloader:_click_and_download:183 -     Файлов в папке тендера: 1 → ['Приложение № 1 обоснование НМЦК.doc']
+2026-07-21 00:19:15.010 | WARNING  | scraper.downloader:download_tender_docs:272 -   ⚠️  Не скачался: Приложение № 4 Требования к содержанию составу заявки (3).docx
+2026-07-21 00:19:15.018 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [5/6] [Adobe Acrobat Document] Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:19:15.019 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 4
+2026-07-21 00:19:15.023 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:19:15.355 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=7399AC6FBF9C4D12BB03EF08155F9950
+2026-07-21 00:19:17.512 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:19:47.543 | DEBUG    | scraper.downloader:_click_and_download:181 -     Новых файлов в docs/: 0 → []
+2026-07-21 00:19:47.543 | DEBUG    | scraper.downloader:_click_and_download:183 -     Файлов в папке тендера: 1 → ['Приложение № 1 обоснование НМЦК.doc']
+2026-07-21 00:19:47.543 | WARNING  | scraper.downloader:download_tender_docs:272 -   ⚠️  Не скачался: Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:19:47.552 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [6/6] [Adobe Acrobat Document] Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:19:47.553 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 4
+2026-07-21 00:19:47.557 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:19:47.885 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=E59FAC90822D40FE8CD3C6DED2CDA198
+2026-07-21 00:19:50.441 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:20:20.472 | DEBUG    | scraper.downloader:_click_and_download:181 -     Новых файлов в docs/: 0 → []
+2026-07-21 00:20:20.472 | DEBUG    | scraper.downloader:_click_and_download:183 -     Файлов в папке тендера: 1 → ['Приложение № 1 обоснование НМЦК.doc']
+2026-07-21 00:20:20.472 | WARNING  | scraper.downloader:download_tender_docs:272 -   ⚠️  Не скачался: Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:20:23.947 | INFO     | __main__:phase_download:88 - [2/3] № 0166100000726000015
+2026-07-21 00:20:23.948 | INFO     | scraper.downloader:download_tender_docs:235 - 📄 Тендер 0166100000726000015 → https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:20:28.665 | INFO     | scraper.downloader:download_tender_docs:262 -   Найдено документов: 6
+2026-07-21 00:20:28.665 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [1/6] [Microsoft Word Document] Обоснование начальной (максимальной) цены контракта
+2026-07-21 00:20:28.665 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:20:28.665 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:20:29.009 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F17A8FC9A77DE9A74373BD98979C5
+2026-07-21 00:20:31.215 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:20:32.221 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Обоснование начальной (максимальной) цены контракта.doc (149 КБ)
+2026-07-21 00:20:32.222 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Обоснование начальной (максимальной) цены контракта.doc (149 КБ)
+2026-07-21 00:20:32.228 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [2/6] [Microsoft Word Document] Проект контракта
+2026-07-21 00:20:32.230 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:20:32.235 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:20:32.567 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F17A9114577F985B9811A9180724E
+2026-07-21 00:20:36.596 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:21:06.622 | DEBUG    | scraper.downloader:_click_and_download:181 -     Новых файлов в docs/: 0 → []
+2026-07-21 00:21:06.622 | DEBUG    | scraper.downloader:_click_and_download:183 -     Файлов в папке тендера: 1 → ['Обоснование начальной (максимальной) цены контракта.doc']
+2026-07-21 00:21:06.622 | WARNING  | scraper.downloader:download_tender_docs:272 -   ⚠️  Не скачался: Проект контракта
+2026-07-21 00:21:06.626 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [3/6] [Microsoft Word Document] Описание объекта закупки
+2026-07-21 00:21:06.626 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:21:06.635 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:21:06.963 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F17A9284C7441BB450F0697108F9D
+2026-07-21 00:21:09.106 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:21:39.139 | DEBUG    | scraper.downloader:_click_and_download:181 -     Новых файлов в docs/: 0 → []
+2026-07-21 00:21:39.139 | DEBUG    | scraper.downloader:_click_and_download:183 -     Файлов в папке тендера: 1 → ['Обоснование начальной (максимальной) цены контракта.doc']
+2026-07-21 00:21:39.139 | WARNING  | scraper.downloader:download_tender_docs:272 -   ⚠️  Не скачался: Описание объекта закупки
+2026-07-21 00:21:39.152 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [4/6] [Microsoft Word Document] Требования к содержанию, составу заявки на участие в открытом аукционе в электронной форме и инструкция по ее заполнению
+2026-07-21 00:21:39.152 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:21:39.161 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:21:39.503 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F17AA17387DCCAA969AA1323A7F26
+2026-07-21 00:21:41.695 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:22:11.739 | DEBUG    | scraper.downloader:_click_and_download:181 -     Новых файлов в docs/: 0 → []
+2026-07-21 00:22:11.739 | DEBUG    | scraper.downloader:_click_and_download:183 -     Файлов в папке тендера: 1 → ['Обоснование начальной (максимальной) цены контракта.doc']
+2026-07-21 00:22:11.739 | WARNING  | scraper.downloader:download_tender_docs:272 -   ⚠️  Не скачался: Требования к содержанию, составу заявки на участие в открытом аукционе в электронной форме и инструкция по ее заполнению
+2026-07-21 00:22:11.739 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [5/6] [Adobe Acrobat Document] Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:22:11.739 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:22:11.754 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:22:12.076 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=97C2DCF490FE4941B0379F8E6425ACDC
+2026-07-21 00:22:14.208 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:22:14.832 | INFO     | __main__:main:126 - Остановлено пользователем
+2026-07-21 00:22:31.157 | INFO     | __main__:main:131 - Браузер закрыт. Работа завершена.
+2026-07-21 00:24:07.724 | INFO     | storage.db:init_db:64 - БД инициализирована: C:\Panoptis\parsergoszak\storage\tenders.db
+2026-07-21 00:24:10.925 | INFO     | scraper.browser:build_driver:70 - Браузер запущен
+2026-07-21 00:24:10.925 | INFO     | __main__:phase_search:46 - ============================================================
+2026-07-21 00:24:10.925 | INFO     | __main__:phase_search:47 - ФАЗА 1 — Поиск тендеров
+2026-07-21 00:24:10.926 | INFO     | __main__:phase_search:48 - ============================================================
+2026-07-21 00:24:10.926 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «поставка офисной бумаги»
+2026-07-21 00:24:31.758 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-07-21 00:24:31.758 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «поставка офисной бумаги»: 50 тендеров
+2026-07-21 00:24:34.192 | INFO     | __main__:phase_search:71 - ✅ «поставка офисной бумаги»: 50 найдено, 50 новых
+2026-07-21 00:24:37.618 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «поставка бумаги для принтера»
+2026-07-21 00:24:40.312 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-07-21 00:24:40.313 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «поставка бумаги для принтера»: 50 тендеров
+2026-07-21 00:24:43.294 | INFO     | __main__:phase_search:71 - ✅ «поставка бумаги для принтера»: 50 найдено, 50 новых
+2026-07-21 00:24:46.483 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «поставка бумаги а4»
+2026-07-21 00:24:49.159 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-07-21 00:24:49.160 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «поставка бумаги а4»: 50 тендеров
+2026-07-21 00:24:52.046 | INFO     | __main__:phase_search:71 - ✅ «поставка бумаги а4»: 50 найдено, 48 новых
+2026-07-21 00:24:55.195 | INFO     | __main__:phase_download:80 - ============================================================
+2026-07-21 00:24:55.196 | INFO     | __main__:phase_download:81 - ФАЗА 2 — Скачивание документов
+2026-07-21 00:24:55.197 | INFO     | __main__:phase_download:82 - ============================================================
+2026-07-21 00:24:55.217 | INFO     | __main__:phase_download:85 - В очереди на скачивание: 3 тендеров
+2026-07-21 00:24:55.218 | INFO     | __main__:phase_download:88 - [1/3] № 0123300004626000069
+2026-07-21 00:24:55.218 | INFO     | scraper.downloader:download_tender_docs:235 - 📄 Тендер 0123300004626000069 → https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:24:57.949 | INFO     | scraper.downloader:download_tender_docs:262 -   Найдено документов: 6
+2026-07-21 00:24:57.949 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [1/6] [Microsoft Word Document] Приложение № 1 обоснование НМЦК.doc
+2026-07-21 00:24:57.950 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:24:57.956 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:24:58.291 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F1739FFE87873A366E374006FEE56
+2026-07-21 00:25:00.551 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:25:01.552 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Приложение № 1 обоснование НМЦК.doc (198 КБ)
+2026-07-21 00:25:01.553 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Приложение № 1 обоснование НМЦК_1.doc (198 КБ)
+2026-07-21 00:25:01.559 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [2/6] [Microsoft Word Document] Приложение № 2 Проект контракта.docx
+2026-07-21 00:25:01.560 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:25:01.565 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:25:01.899 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F173A0068736BB83449178EEA96AD
+2026-07-21 00:25:04.295 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:25:05.306 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Приложение № 2 Проект контракта.docx (43 КБ)
+2026-07-21 00:25:05.344 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Приложение № 2 Проект контракта.docx (43 КБ)
+2026-07-21 00:25:05.354 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [3/6] [Microsoft Word Document] Приложение № 3 Описание объекта закупки.doc
+2026-07-21 00:25:05.356 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:25:05.362 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:25:05.704 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F173A00447A4D91F764141D7C0162
+2026-07-21 00:25:07.944 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:25:08.950 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Приложение № 3 Описание объекта закупки.doc (147 КБ)
+2026-07-21 00:25:08.953 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Приложение № 3 Описание объекта закупки.doc (147 КБ)
+2026-07-21 00:25:08.963 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [4/6] [Microsoft Word Document] Приложение № 4 Требования к содержанию составу заявки (3).docx
+2026-07-21 00:25:08.965 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:25:08.974 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:25:09.296 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F173A0023792399F888A23E505915
+2026-07-21 00:25:15.055 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:25:16.059 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Приложение № 4 Требования к содержанию составу заявки (3).docx (25 КБ)
+2026-07-21 00:25:16.059 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Приложение № 4 Требования к содержанию составу заявки (3).docx (25 КБ)
+2026-07-21 00:25:16.071 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [5/6] [Adobe Acrobat Document] Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:25:16.072 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:25:16.082 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:25:16.407 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=7399AC6FBF9C4D12BB03EF08155F9950
+2026-07-21 00:25:18.619 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:25:19.621 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 830171.crdownload']
+2026-07-21 00:25:20.622 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 830171.crdownload']
+2026-07-21 00:25:21.623 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 830171.crdownload']
+2026-07-21 00:25:22.624 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 830171.crdownload']
+2026-07-21 00:25:23.626 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 830171.crdownload']
+2026-07-21 00:25:24.629 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 830171.crdownload']
+2026-07-21 00:25:25.630 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 830171.crdownload']
+2026-07-21 00:25:26.632 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 830171.crdownload']
+2026-07-21 00:25:27.633 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 830171.crdownload']
+2026-07-21 00:25:28.635 | DEBUG    | scraper.downloader:_wait_download_complete:84 -     Скачивается: ['Не подтвержден 830171.crdownload']
+2026-07-21 00:25:29.636 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Электронный документ, полученный из внешней системы.pdf (115 КБ)
+2026-07-21 00:25:29.637 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Электронный документ, полученный из внешней системы.pdf (115 КБ)
+2026-07-21 00:25:29.638 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [6/6] [Adobe Acrobat Document] Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:25:29.638 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:25:29.651 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:25:29.975 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=E59FAC90822D40FE8CD3C6DED2CDA198
+2026-07-21 00:25:32.275 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:25:33.278 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Электронный документ, полученный из внешней системы.docx (25 КБ)
+2026-07-21 00:25:33.278 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Электронный документ, полученный из внешней системы.pdf.docx (25 КБ)
+2026-07-21 00:25:36.427 | INFO     | __main__:phase_download:88 - [2/3] № 0166100000726000015
+2026-07-21 00:25:36.427 | INFO     | scraper.downloader:download_tender_docs:235 - 📄 Тендер 0166100000726000015 → https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:25:39.550 | INFO     | scraper.downloader:download_tender_docs:262 -   Найдено документов: 6
+2026-07-21 00:25:39.550 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [1/6] [Microsoft Word Document] Обоснование начальной (максимальной) цены контракта
+2026-07-21 00:25:39.550 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:25:39.553 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:25:39.887 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F17A8FC9A77DE9A74373BD98979C5
+2026-07-21 00:25:42.062 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:25:43.071 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Обоснование начальной (максимальной) цены контракта.doc (149 КБ)
+2026-07-21 00:25:43.109 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Обоснование начальной (максимальной) цены контракта_1.doc (149 КБ)
+2026-07-21 00:25:43.117 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [2/6] [Microsoft Word Document] Проект контракта
+2026-07-21 00:25:43.117 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:25:43.124 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:25:43.450 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F17A9114577F985B9811A9180724E
+2026-07-21 00:25:45.852 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:25:46.853 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Проект контракта.docx (34 КБ)
+2026-07-21 00:25:46.854 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Проект контракта.docx (34 КБ)
+2026-07-21 00:25:46.860 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [3/6] [Microsoft Word Document] Описание объекта закупки
+2026-07-21 00:25:46.860 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:25:46.868 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:25:47.207 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F17A9284C7441BB450F0697108F9D
+2026-07-21 00:25:49.345 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:25:50.348 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Описание объекта закупки.docx (30 КБ)
+2026-07-21 00:25:50.348 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Описание объекта закупки.docx (30 КБ)
+2026-07-21 00:25:50.354 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [4/6] [Microsoft Word Document] Требования к содержанию, составу заявки на участие в открытом аукционе в электронной форме и инструкция по ее заполнению
+2026-07-21 00:25:50.354 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:25:50.368 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:25:50.708 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=019F17AA17387DCCAA969AA1323A7F26
+2026-07-21 00:25:52.846 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:25:53.848 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Требования к содержанию, составу заявки на участие в открытом аукционе в электронной форме и инструкция по ее заполнению.doc (112 КБ)
+2026-07-21 00:25:53.850 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Требования к содержанию, составу заявки на участие в открытом аукционе в электронной форме и инструкция по ее заполнению.doc (112 КБ)
+2026-07-21 00:25:53.860 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [5/6] [Adobe Acrobat Document] Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:25:53.862 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:25:53.870 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:25:54.215 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=97C2DCF490FE4941B0379F8E6425ACDC
+2026-07-21 00:25:56.403 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:25:57.409 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Электронный документ, полученный из внешней системы.xml (4 КБ)
+2026-07-21 00:25:57.409 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Электронный документ, полученный из внешней системы.pdf.xml (4 КБ)
+2026-07-21 00:25:57.416 | INFO     | scraper.downloader:download_tender_docs:266 -   ⬇️  [6/6] [Adobe Acrobat Document] Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:25:57.416 | DEBUG    | scraper.downloader:_click_and_download:149 -     Файлов в docs/ до клика: 5
+2026-07-21 00:25:57.421 | DEBUG    | scraper.downloader:_click_and_download:150 -     Текущий URL: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:25:57.742 | DEBUG    | scraper.downloader:_click_and_download:163 -     Кликаем: https://zakupki.gov.ru/44fz/filestore/public/1.0/download/priz/file.html?uid=657B6F26FA9F448791A13703C4796EED
+2026-07-21 00:25:59.932 | DEBUG    | scraper.downloader:_click_and_download:174 -     URL после клика: https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:26:00.934 | DEBUG    | scraper.downloader:_click_and_download:186 -     Скачан: C:\Panoptis\parsergoszak\docs\Электронный документ, полученный из внешней системы.doc (103 КБ)
+2026-07-21 00:26:00.936 | INFO     | scraper.downloader:_click_and_download:206 -   ✅ Электронный документ, полученный из внешней системы.pdf.doc (103 КБ)
+2026-07-21 00:26:04.708 | INFO     | __main__:phase_download:88 - [3/3] № 32616161293
+2026-07-21 00:26:04.709 | INFO     | scraper.downloader:download_tender_docs:235 - 📄 Тендер 32616161293 → https://zakupki.gov.ru/223/purchase/public/purchase/info/common-info.html?regNumber=32616161293
+2026-07-21 00:26:37.921 | INFO     | scraper.downloader:download_tender_docs:253 -   Fallback: https://zakupki.gov.ru/epz/order/notice/view/documents.html?regNumber=32616161293
+2026-07-21 00:26:38.113 | WARNING  | scraper.browser:safe_get:143 -   ⚠️  Страница пустая или не загрузилась (попытка 1/5)
+2026-07-21 00:26:38.114 | INFO     | scraper.browser:safe_get:187 -   🔄 Повтор через 5 сек...
+2026-07-21 00:26:43.239 | WARNING  | scraper.browser:safe_get:143 -   ⚠️  Страница пустая или не загрузилась (попытка 2/5)
+2026-07-21 00:26:43.239 | INFO     | scraper.browser:safe_get:187 -   🔄 Повтор через 10 сек...
+2026-07-21 00:26:53.362 | WARNING  | scraper.browser:safe_get:143 -   ⚠️  Страница пустая или не загрузилась (попытка 3/5)
+2026-07-21 00:26:53.362 | INFO     | scraper.browser:safe_get:187 -   🔄 Повтор через 15 сек...
+2026-07-21 00:27:08.502 | WARNING  | scraper.browser:safe_get:143 -   ⚠️  Страница пустая или не загрузилась (попытка 4/5)
+2026-07-21 00:27:08.502 | INFO     | scraper.browser:safe_get:187 -   🔄 Повтор через 20 сек...
+2026-07-21 00:27:28.637 | WARNING  | scraper.browser:safe_get:143 -   ⚠️  Страница пустая или не загрузилась (попытка 5/5)
+2026-07-21 00:27:28.637 | ERROR    | scraper.browser:safe_get:190 -   ❌ Не удалось загрузить после 5 попыток: https://zakupki.gov.ru/epz/order/notice/view/documents.html?regNumber=32616161293
+2026-07-21 00:27:28.637 | INFO     | scraper.downloader:download_tender_docs:259 -   Документов не найдено для 32616161293
+2026-07-21 00:27:31.784 | INFO     | __main__:phase_download:94 - Фаза 2 завершена
+2026-07-21 00:27:34.028 | INFO     | __main__:main:131 - Браузер закрыт. Работа завершена.
+2026-07-21 00:42:38.983 | INFO     | storage.db:init_db:64 - БД инициализирована: C:\Panoptis\parsergoszak\storage\tenders.db
+2026-07-21 00:42:42.238 | INFO     | scraper.browser:build_driver:70 - Браузер запущен
+2026-07-21 00:42:42.238 | INFO     | __main__:phase_search:46 - ============================================================
+2026-07-21 00:42:42.239 | INFO     | __main__:phase_search:47 - ФАЗА 1 — Поиск тендеров
+2026-07-21 00:42:42.240 | INFO     | __main__:phase_search:48 - ============================================================
+2026-07-21 00:42:42.240 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «поставка офисной бумаги»
+2026-07-21 00:42:54.582 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-07-21 00:42:54.582 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «поставка офисной бумаги»: 50 тендеров
+2026-07-21 00:42:57.734 | INFO     | __main__:phase_search:71 - ✅ «поставка офисной бумаги»: 50 найдено, 50 новых
+2026-07-21 00:43:03.294 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «поставка бумаги для принтера»
+2026-07-21 00:43:06.026 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-07-21 00:43:06.026 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «поставка бумаги для принтера»: 50 тендеров
+2026-07-21 00:43:09.541 | INFO     | __main__:phase_search:71 - ✅ «поставка бумаги для принтера»: 50 найдено, 50 новых
+2026-07-21 00:43:14.513 | INFO     | scraper.eis_parser:scrape_search_results:134 - 🔍 Ищем: «поставка бумаги а4»
+2026-07-21 00:43:24.176 | INFO     | scraper.eis_parser:scrape_search_results:147 -   Стр. 1/1: найдено 50 карточек
+2026-07-21 00:43:24.176 | INFO     | scraper.eis_parser:scrape_search_results:162 - Итого по «поставка бумаги а4»: 50 тендеров
+2026-07-21 00:43:26.563 | INFO     | __main__:phase_search:71 - ✅ «поставка бумаги а4»: 50 найдено, 48 новых
+2026-07-21 00:43:32.537 | INFO     | __main__:phase_download:80 - ============================================================
+2026-07-21 00:43:32.537 | INFO     | __main__:phase_download:81 - ФАЗА 2 — Скачивание документов
+2026-07-21 00:43:32.537 | INFO     | __main__:phase_download:82 - ============================================================
+2026-07-21 00:43:32.553 | INFO     | __main__:phase_download:85 - В очереди на скачивание: 3 тендеров
+2026-07-21 00:43:32.554 | INFO     | __main__:phase_download:88 - [1/3] № 0123300004626000069
+2026-07-21 00:43:32.555 | INFO     | scraper.downloader:download_tender_docs:252 - 📄 Тендер 0123300004626000069 → https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0123300004626000069
+2026-07-21 00:43:43.603 | INFO     | scraper.downloader:download_tender_docs:280 -   Найдено документов: 6
+2026-07-21 00:43:43.603 | INFO     | scraper.downloader:download_tender_docs:284 -   ⬇️  [1/6] [Microsoft Word Document] Приложение № 1 обоснование НМЦК.doc
+2026-07-21 00:43:43.603 | DEBUG    | scraper.downloader:_click_and_download:182 -     Файлов в docs/ до клика: 6
+2026-07-21 00:43:47.213 | INFO     | scraper.downloader:_click_and_download:231 -   ✅ Приложение № 1 обоснование НМЦК_2.doc (198 КБ)
+2026-07-21 00:43:47.222 | INFO     | scraper.downloader:download_tender_docs:284 -   ⬇️  [2/6] [Microsoft Word Document] Приложение № 2 Проект контракта.docx
+2026-07-21 00:43:47.224 | DEBUG    | scraper.downloader:_click_and_download:182 -     Файлов в docs/ до клика: 6
+2026-07-21 00:43:50.690 | INFO     | scraper.downloader:_click_and_download:231 -   ✅ Приложение № 2 Проект контракта_1.docx (43 КБ)
+2026-07-21 00:43:50.692 | INFO     | scraper.downloader:download_tender_docs:284 -   ⬇️  [3/6] [Microsoft Word Document] Приложение № 3 Описание объекта закупки.doc
+2026-07-21 00:43:50.692 | DEBUG    | scraper.downloader:_click_and_download:182 -     Файлов в docs/ до клика: 6
+2026-07-21 00:43:54.232 | INFO     | scraper.downloader:_click_and_download:231 -   ✅ Приложение № 3 Описание объекта закупки_1.doc (147 КБ)
+2026-07-21 00:43:54.232 | INFO     | scraper.downloader:download_tender_docs:284 -   ⬇️  [4/6] [Microsoft Word Document] Приложение № 4 Требования к содержанию составу заявки (3).docx
+2026-07-21 00:43:54.232 | DEBUG    | scraper.downloader:_click_and_download:182 -     Файлов в docs/ до клика: 6
+2026-07-21 00:43:57.904 | INFO     | scraper.downloader:_click_and_download:231 -   ✅ Приложение № 4 Требования к содержанию составу заявки (3)_1.docx (25 КБ)
+2026-07-21 00:43:57.910 | INFO     | scraper.downloader:download_tender_docs:284 -   ⬇️  [5/6] [Adobe Acrobat Document] Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:43:57.911 | DEBUG    | scraper.downloader:_click_and_download:182 -     Файлов в docs/ до клика: 6
+2026-07-21 00:44:01.583 | INFO     | scraper.downloader:_click_and_download:231 -   ✅ Электронный документ, полученный из внешней системы_1.pdf (115 КБ)
+2026-07-21 00:44:01.588 | INFO     | scraper.downloader:download_tender_docs:284 -   ⬇️  [6/6] [Adobe Acrobat Document] Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:44:01.588 | DEBUG    | scraper.downloader:_click_and_download:182 -     Файлов в docs/ до клика: 6
+2026-07-21 00:44:05.057 | INFO     | scraper.downloader:_click_and_download:231 -   ✅ Электронный документ, полученный из внешней системы.pdf_1.docx (25 КБ)
+2026-07-21 00:44:09.599 | INFO     | __main__:phase_download:88 - [2/3] № 0166100000726000015
+2026-07-21 00:44:09.600 | INFO     | scraper.downloader:download_tender_docs:252 - 📄 Тендер 0166100000726000015 → https://zakupki.gov.ru/epz/order/notice/ea20/view/documents.html?regNumber=0166100000726000015
+2026-07-21 00:44:12.563 | INFO     | scraper.downloader:download_tender_docs:280 -   Найдено документов: 6
+2026-07-21 00:44:12.563 | INFO     | scraper.downloader:download_tender_docs:284 -   ⬇️  [1/6] [Microsoft Word Document] Обоснование начальной (максимальной) цены контракта
+2026-07-21 00:44:12.563 | DEBUG    | scraper.downloader:_click_and_download:182 -     Файлов в docs/ до клика: 6
+2026-07-21 00:44:16.051 | INFO     | scraper.downloader:_click_and_download:231 -   ✅ Обоснование начальной (максимальной) цены контракта_2.doc (149 КБ)
+2026-07-21 00:44:16.058 | INFO     | scraper.downloader:download_tender_docs:284 -   ⬇️  [2/6] [Microsoft Word Document] Проект контракта
+2026-07-21 00:44:16.059 | DEBUG    | scraper.downloader:_click_and_download:182 -     Файлов в docs/ до клика: 6
+2026-07-21 00:44:19.518 | INFO     | scraper.downloader:_click_and_download:231 -   ✅ Проект контракта_1.docx (34 КБ)
+2026-07-21 00:44:19.525 | INFO     | scraper.downloader:download_tender_docs:284 -   ⬇️  [3/6] [Microsoft Word Document] Описание объекта закупки
+2026-07-21 00:44:19.525 | DEBUG    | scraper.downloader:_click_and_download:182 -     Файлов в docs/ до клика: 6
+2026-07-21 00:44:22.983 | INFO     | scraper.downloader:_click_and_download:231 -   ✅ Описание объекта закупки_1.docx (30 КБ)
+2026-07-21 00:44:22.983 | INFO     | scraper.downloader:download_tender_docs:284 -   ⬇️  [4/6] [Microsoft Word Document] Требования к содержанию, составу заявки на участие в открытом аукционе в электронной форме и инструкция по ее заполнению
+2026-07-21 00:44:22.983 | DEBUG    | scraper.downloader:_click_and_download:182 -     Файлов в docs/ до клика: 6
+2026-07-21 00:44:27.182 | INFO     | scraper.downloader:_click_and_download:231 -   ✅ Требования к содержанию, составу заявки на участие в открытом аукционе в электронной форме и инструкция по ее заполнению_1.doc (112 КБ)
+2026-07-21 00:44:27.189 | INFO     | scraper.downloader:download_tender_docs:284 -   ⬇️  [5/6] [Adobe Acrobat Document] Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:44:27.190 | DEBUG    | scraper.downloader:_click_and_download:182 -     Файлов в docs/ до клика: 6
+2026-07-21 00:44:30.667 | INFO     | scraper.downloader:_click_and_download:231 -   ✅ Электронный документ, полученный из внешней системы.pdf_1.xml (4 КБ)
+2026-07-21 00:44:30.672 | INFO     | scraper.downloader:download_tender_docs:284 -   ⬇️  [6/6] [Adobe Acrobat Document] Электронный документ, полученный из внешней системы.pdf
+2026-07-21 00:44:30.672 | DEBUG    | scraper.downloader:_click_and_download:182 -     Файлов в docs/ до клика: 6
+2026-07-21 00:44:34.147 | INFO     | scraper.downloader:_click_and_download:231 -   ✅ Электронный документ, полученный из внешней системы.pdf_1.doc (103 КБ)
+2026-07-21 00:44:37.586 | INFO     | __main__:phase_download:88 - [3/3] № 32616161293
+2026-07-21 00:44:37.599 | DEBUG    | scraper.downloader:_build_docs_url:88 -   223-ФЗ docs URL: https://zakupki.gov.ru/223/purchase/public/purchase/info/documents.html?regNumber=32616161293
+2026-07-21 00:44:37.603 | INFO     | scraper.downloader:download_tender_docs:252 - 📄 Тендер 32616161293 → https://zakupki.gov.ru/223/purchase/public/purchase/info/documents.html?regNumber=32616161293
+2026-07-21 00:44:38.534 | WARNING  | scraper.browser:safe_get:143 -   ⚠️  Страница пустая или не загрузилась (попытка 1/5)
+2026-07-21 00:44:38.535 | INFO     | scraper.browser:safe_get:187 -   🔄 Повтор через 5 сек...
+2026-07-21 00:44:43.657 | WARNING  | scraper.browser:safe_get:143 -   ⚠️  Страница пустая или не загрузилась (попытка 2/5)
+2026-07-21 00:44:43.657 | INFO     | scraper.browser:safe_get:187 -   🔄 Повтор через 10 сек...
+2026-07-21 00:44:53.828 | WARNING  | scraper.browser:safe_get:143 -   ⚠️  Страница пустая или не загрузилась (попытка 3/5)
+2026-07-21 00:44:53.840 | INFO     | scraper.browser:safe_get:187 -   🔄 Повтор через 15 сек...
+2026-07-21 00:45:08.991 | WARNING  | scraper.browser:safe_get:143 -   ⚠️  Страница пустая или не загрузилась (попытка 4/5)
+2026-07-21 00:45:08.991 | INFO     | scraper.browser:safe_get:187 -   🔄 Повтор через 20 сек...
+2026-07-21 00:45:29.250 | WARNING  | scraper.browser:safe_get:143 -   ⚠️  Страница пустая или не загрузилась (попытка 5/5)
+2026-07-21 00:45:29.250 | ERROR    | scraper.browser:safe_get:190 -   ❌ Не удалось загрузить после 5 попыток: https://zakupki.gov.ru/223/purchase/public/purchase/info/documents.html?regNumber=32616161293
+2026-07-21 00:45:29.250 | ERROR    | scraper.downloader:download_tender_docs:255 - Не удалось открыть: https://zakupki.gov.ru/223/purchase/public/purchase/info/documents.html?regNumber=32616161293
+2026-07-21 00:45:32.609 | INFO     | __main__:phase_download:94 - Фаза 2 завершена
+2026-07-21 00:45:34.898 | INFO     | __main__:main:131 - Браузер закрыт. Работа завершена.

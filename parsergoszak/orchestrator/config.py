@@ -26,9 +26,26 @@ LOG_DIR = Path(r"C:\agent\data\logs")
 DONE_FLAG_NAME = "_done.flag"
 
 # Расширения, которые оркестратор умеет анализировать в MVP.
-# .pdf и .doc/.xls сознательно не поддержаны на этом этапе — нужен
-# отдельный конвертер/OCR, добавим следующим шагом.
-SUPPORTED_EXTENSIONS = {".docx", ".xlsx"}
+# .doc/.xls (старые бинарные форматы Office) поддержаны через конвертацию
+# в .docx/.xlsx локальным LibreOffice (см. LIBREOFFICE_PATH ниже) — см.
+# _convert_via_libreoffice() в text_extractor.py.
+# .pdf сознательно не поддержан на этом этапе — нужен pdfplumber/OCR
+# для сканов, это отдельный следующий шаг.
+SUPPORTED_EXTENSIONS = {".docx", ".xlsx", ".doc", ".xls"}
+
+# ── LibreOffice (конвертация .doc/.xls → .docx/.xlsx) ───────────────────
+
+# Путь к soffice.exe. Если None — используем "soffice" из PATH.
+# Стандартные пути установки на Windows (раскомментируй нужный,
+# если LibreOffice не подхватывается из PATH):
+#   r"C:\Program Files\LibreOffice\program\soffice.exe"
+#   r"C:\Program Files (x86)\LibreOffice\program\soffice.exe"
+LIBREOFFICE_PATH = None
+
+# Таймаут на конвертацию одного файла (секунды). LibreOffice headless
+# стартует не мгновенно (несколько секунд на инициализацию), поэтому
+# таймаут больше, чем у обычных операций с файлами.
+LIBREOFFICE_TIMEOUT_SEC = 90
 
 # ── LLM (llama.cpp HTTP API) ────────────────────────────────────────────
 

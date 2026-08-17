@@ -15,6 +15,12 @@ DOCS_DIR.mkdir(exist_ok=True)
 LOGS_DIR.mkdir(exist_ok=True)
 DB_PATH.parent.mkdir(exist_ok=True)
 
+# Имя флага готовности, который скрапер пишет по завершении скачивания
+# документов закупки. ДОЛЖНО совпадать с DONE_FLAG_NAME в
+# orchestrator/config.py — по нему watcher.py в оркестраторе понимает,
+# что закупку можно ставить в очередь на анализ.
+DONE_FLAG_NAME = "_done.flag"
+
 # --- Ключевые слова поиска (замени под свою нишу) ---
 SEARCH_KEYWORDS = [
     "поставка офисной бумаги",

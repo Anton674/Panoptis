@@ -5,6 +5,7 @@
 
 import time
 import re
+import json
 import shutil
 from pathlib import Path
 
@@ -233,6 +234,32 @@ def _click_and_download(driver: webdriver.Chrome,
             "file_size": size, "doc_type": doc["doc_type"]}
 
 
+def _write_done_flag(tender_dir: Path, downloaded: list[dict]) -> None:
+    """
+    Пишет _done.flag в папку закупки — сигнал для orchestrator/watcher.py,
+    что скачивание завершено и можно ставить закупку в очередь на анализ.
+
+    Формат должен совпадать с тем, что читает
+    orchestrator/main.py::_load_flag_metadata (ключ "files",
+    каждый элемент — {"filename": ..., "doc_type": ...}).
+    """
+    flag_path = tender_dir / config.DONE_FLAG_NAME
+    payload = {
+        "files": [
+            {"filename": d["filename"], "doc_type": d.get("doc_type")}
+            for d in downloaded
+        ]
+    }
+    try:
+        flag_path.write_text(
+            json.dumps(payload, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        logger.info(f"  🏁 Флаг готовности записан: {flag_path}")
+    except Exception as e:
+        logger.error(f"  Не удалось записать {flag_path}: {e}")
+
+
 def download_tender_docs(driver: webdriver.Chrome,
                          tender: dict,
                          tender_id: int) -> list[dict]:
@@ -275,6 +302,7 @@ def download_tender_docs(driver: webdriver.Chrome,
 
     if not docs:
         logger.info(f"  Документов не найдено для {safe_num}")
+        _write_done_flag(tender_dir, [])
         return []
 
     logger.info(f"  Найдено документов: {len(docs)}")
@@ -294,4 +322,5 @@ def download_tender_docs(driver: webdriver.Chrome,
             wait_for(driver, By.CSS_SELECTOR, "div.attachment", timeout=15)
             random_delay(1.0, 1.5)
 
+    _write_done_flag(tender_dir, downloaded)
     return downloaded

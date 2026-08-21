@@ -28,22 +28,38 @@ import json
 import sys
 from pathlib import Path
 
+# Консоль Windows по умолчанию открывает stdout в кодировке cp1251/cp866,
+# которая не может закодировать часть символов, встречающихся в реальных
+# документах закупок (например, юникодный минус "−" U+2212 в диапазонах
+# вида "≥15 и ≤35"). Без reconfigure любой print() с таким символом валит
+# UnicodeEncodeError и обрывает весь прогон по папке на середине.
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 from header_splitter import HeaderNotFoundError, extract_headers, split_by_headers
+
+sys.path.insert(0, str(Path(__file__).parent / "orchestrator"))
+from text_extractor import extract_docx_text, extract_doc_text  # noqa: E402
+
+# Извлекаем текст напрямую через функции text_extractor.py, а НЕ через
+# text_extractor.extract_text() — та обрезает текст до config.MAX_DOC_CHARS
+# (12000 символов), откалиброванного под контекст Aura (-c 8192). Qwen
+# используется здесь именно из-за большого контекста, обрезка по чужому
+# лимиту скрывала бы от неё заголовки в хвосте документа.
+_LOADERS = {
+    ".docx": extract_docx_text,
+    ".doc": extract_doc_text,
+}
 
 
 def load_text(path: Path) -> str:
-    """
-    TODO: заменить на импорт существующего text_extractor.py из основного
-    проекта (from text_extractor import extract_text; extract_text(path)),
-    чтобы поддержать .docx/.doc/.rtf/.odt/.xlsx так же, как в агенте.
-    Пока — только .txt, для быстрого локального теста.
-    """
-    if path.suffix.lower() == ".txt":
-        return path.read_text(encoding="utf-8", errors="replace")
-    raise NotImplementedError(
-        f"Расширение {path.suffix} пока не поддержано в тестовом скрипте — "
-        f"подключи text_extractor.py из основного проекта (см. TODO в load_text)."
-    )
+    loader = _LOADERS.get(path.suffix.lower())
+    if loader is None:
+        raise NotImplementedError(
+            f"Расширение {path.suffix} не поддержано в тестовом скрипте "
+            f"(поддержаны: {', '.join(_LOADERS)})."
+        )
+    return loader(path)
 
 
 def process_document(path: Path, api_url: str, out_dir: Path) -> None:
@@ -73,7 +89,7 @@ def process_document(path: Path, api_url: str, out_dir: Path) -> None:
             for s in sections
         ],
     }
-    out_path = out_dir / f"{path.stem}.sections.json"
+    out_path = out_dir / f"{path.parent.name}__{path.stem}.sections.json"
     out_path.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"  Сохранено: {out_path}")
 
@@ -89,8 +105,8 @@ def main():
     )
     parser.add_argument(
         "--ext",
-        default=".txt",
-        help="Расширение файлов для обработки (пока поддержан только .txt, см. TODO в load_text)",
+        default=None,
+        help=f"Расширение файлов для обработки (по умолчанию все поддержанные: {', '.join(_LOADERS)})",
     )
     args = parser.parse_args()
 
@@ -98,9 +114,13 @@ def main():
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
-    files = sorted(docs_dir.glob(f"*{args.ext}"))
+    exts = [args.ext] if args.ext else list(_LOADERS)
+    # rglob — документы лежат в подпапках docs/<reg_number>/..., не плоско
+    files = sorted(
+        p for ext in exts for p in docs_dir.rglob(f"*{ext}")
+    )
     if not files:
-        print(f"Файлов с расширением {args.ext} в {docs_dir} не найдено.")
+        print(f"Файлов с расширениями {exts} в {docs_dir} (включая подпапки) не найдено.")
         sys.exit(1)
 
     ok, failed = 0, 0

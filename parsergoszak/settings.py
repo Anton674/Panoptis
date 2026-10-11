@@ -7,8 +7,12 @@
 # ============================================================
 
 import re
-import tomllib
 from pathlib import Path
+
+try:
+    import tomllib                  # встроен в Python 3.11+
+except ImportError:
+    import tomli as tomllib         # Python 3.10 и ниже: pip install tomli
 
 from loguru import logger
 

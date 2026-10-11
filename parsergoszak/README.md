@@ -30,7 +30,7 @@ parsergoszak/
 
 ## Установка (Windows)
 
-Нужны Python 3.11+ и Google Chrome.
+Нужны Python 3.10 или новее и Google Chrome.
 
 ```powershell
 cd C:\Panoptis\parsergoszak

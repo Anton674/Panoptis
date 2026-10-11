@@ -19,7 +19,8 @@ from loguru import logger
 import config
 
 
-def build_driver(download_dir: Path = config.DOCS_DIR) -> webdriver.Chrome:
+def build_driver(download_dir: Path | None = None) -> webdriver.Chrome:
+    download_dir = download_dir or config.DOCS_DIR
     options = Options()
 
     if config.HEADLESS:

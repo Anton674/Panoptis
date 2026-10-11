@@ -18,6 +18,7 @@ from scraper.browser import safe_get, random_delay, wait_for
 def build_search_url(keyword: str, page: int = 1) -> str:
     from urllib.parse import quote
     kw = quote(keyword, safe="")
+    laws = "".join(f"&{law}=on" for law in config.LAWS)
     base = (
         f"{config.EIS_BASE}/epz/order/extendedsearch/results.html"
         f"?searchString={kw}"
@@ -28,7 +29,7 @@ def build_search_url(keyword: str, page: int = 1) -> str:
         f"&recordsPerPage=_{config.RECORDS_PER_PAGE}"
         f"&showLotsInfoHidden=false"
         f"&sortBy={config.SORT_BY}"
-        f"&fz44=on&fz223=on&af=on&pc=on&pa=on"
+        f"{laws}&af=on&pc=on&pa=on"
     )
     return base
 

@@ -125,14 +125,29 @@ def is_already_downloaded(tender_id: int) -> bool:
         return row["cnt"] > 0
 
 
-def get_tenders_without_docs(limit: int = 100) -> list[dict]:
-    sql = """
+def get_tenders_without_docs(limit: int = 100,
+                             laws: list[str] | None = None) -> list[dict]:
+    """laws — подписи законов как в БД ("44-ФЗ"); None — все."""
+    law_filter = ""
+    params: list = []
+    if laws:
+        law_filter = f"AND t.law IN ({', '.join('?' * len(laws))})"
+        params.extend(laws)
+    sql = f"""
         SELECT t.* FROM tenders t
         LEFT JOIN documents d ON d.tender_id = t.id
-        WHERE d.id IS NULL
+        WHERE d.id IS NULL {law_filter}
         ORDER BY t.publish_date DESC
         LIMIT ?
     """
+    params.append(limit)
     with get_connection() as conn:
-        rows = conn.execute(sql, (limit,)).fetchall()
+        rows = conn.execute(sql, params).fetchall()
+        return [dict(r) for r in rows]
+
+
+def get_tender_laws() -> list[dict]:
+    """id, номер и закон всех закупок — чтобы понять, к какому закону относится папка docs/."""
+    with get_connection() as conn:
+        rows = conn.execute("SELECT id, purchase_number, law FROM tenders").fetchall()
         return [dict(r) for r in rows]

@@ -6,3 +6,5 @@ requests==2.32.3
 fake-useragent==1.5.1
 python-dotenv==1.0.1
 loguru==0.7.2
+google-api-python-client==2.199.0
+google-auth-oauthlib==1.4.1

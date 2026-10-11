@@ -1,0 +1,4 @@
+# Доступ к Google Диску — личные ключи, в git не коммитить
+credentials.json
+token.json
+client_secret*.json

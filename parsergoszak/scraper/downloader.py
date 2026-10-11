@@ -260,10 +260,20 @@ def _write_done_flag(tender_dir: Path, downloaded: list[dict]) -> None:
         logger.error(f"  Не удалось записать {flag_path}: {e}")
 
 
+def _reg_number(tender: dict) -> str:
+    return re.sub(r'[№#\s]', '', tender.get("purchase_number", "")).strip()
+
+
+def tender_dir_for(tender: dict, tender_id: int) -> Path:
+    """Папка закупки: DOCS_DIR/<номер закупки>/"""
+    safe_num = re.sub(r"[^\w\-]", "_", _reg_number(tender) or str(tender_id))
+    return config.DOCS_DIR / safe_num
+
+
 def download_tender_docs(driver: webdriver.Chrome,
                          tender: dict,
                          tender_id: int) -> list[dict]:
-    reg_number = re.sub(r'[№#\s]', '', tender.get("purchase_number", "")).strip()
+    reg_number = _reg_number(tender)
     tender_url = tender.get("url", "")
 
     if not reg_number and not tender_url:
@@ -272,8 +282,8 @@ def download_tender_docs(driver: webdriver.Chrome,
 
     docs_url = _build_docs_url(tender_url, reg_number)
 
-    safe_num = re.sub(r"[^\w\-]", "_", reg_number or str(tender_id))
-    tender_dir = config.DOCS_DIR / safe_num
+    tender_dir = tender_dir_for(tender, tender_id)
+    safe_num = tender_dir.name
     tender_dir.mkdir(parents=True, exist_ok=True)
 
     logger.info(f"📄 Тендер {safe_num} → {docs_url}")

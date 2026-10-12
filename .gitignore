@@ -1,0 +1,18 @@
+# Репозиторий публичный: всё, что ниже, не должно попасть на GitHub.
+
+# Доступ к Google Диску — личные ключи
+credentials.json
+token.json
+client_secret*.json
+.env
+
+# Виртуальные окружения и кэш Python
+.venv/
+venv/
+myenv/
+.myenv/
+__pycache__/
+*.pyc
+
+# Модели — весят гигабайты
+*.gguf

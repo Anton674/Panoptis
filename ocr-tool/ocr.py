@@ -10,6 +10,7 @@
 """
 
 import argparse
+import glob
 import logging
 import sys
 import time
@@ -82,7 +83,14 @@ def recognize(reader, path: Path) -> str:
 
 
 def output_path_for(image: Path) -> Path:
-    return OUTPUT_DIR / (image.stem + ".txt")
+    """IMG_1.jpg → IMG_1.txt. Если рядом есть IMG_1.png, имена расходятся:
+    IMG_1 (jpg).txt и IMG_1 (png).txt — иначе одно фото затёрло бы другое."""
+    twins = [
+        p for p in INPUT_DIR.glob(glob.escape(image.stem) + ".*")
+        if p != image and p.stem == image.stem and p.suffix.lower() in IMAGE_EXTENSIONS
+    ]
+    name = f"{image.stem} ({image.suffix.lstrip('.').lower()})" if twins else image.stem
+    return OUTPUT_DIR / (name + ".txt")
 
 
 def is_pending(image: Path) -> bool:

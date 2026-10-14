@@ -1,0 +1,6 @@
+.venv/
+models/
+Фото/
+Текст/
+ocr.log
+__pycache__/
